@@ -22,5 +22,5 @@ runs:
     - run: |
         curl.exe -s -o twinpack-latest.tar.gz https://zeugwerk.dev/Tools/twinpack-latest.tar.gz
         tar -xf twinpack-latest.tar.gz
-        ./twinpack.exe --username ${{ inputs.username }} --password ${{ inputs.password }} --without-config --library-path  ${{ inputs.path }}
+        ./twinpack.exe push --username ${{ inputs.username }} --password ${{ inputs.password }} --without-config --library-path  ${{ inputs.path }}
       shell: bash
