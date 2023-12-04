@@ -1,0 +1,26 @@
+name: 'Twinpack Upload'
+description: 'Uploads TwinCAT .library files as packages to Twinpack'
+branding:
+  icon: 'book-open'
+  color: 'gray-dark'
+inputs:
+  username:
+    description: 'Username for Twinpack'
+    required: true
+    default: ''
+  password:
+    description: 'Password for Twinpack'
+    required: true
+    default: ''
+  path:
+    description: 'Path where libraries are located'
+    required: false
+    default: '.'    
+runs:
+  using: "composite"
+  steps:
+    - run: |
+        curl.exe -s -o twinpack-latest.tar.gz https://zeugwerk.dev/Tools/twinpack-latest.tar.gz
+        tar -xf twinpack-latest.tar.gz
+        ./twinpack-latest/twinpack.exe --username ${{ inputs.username }} --password ${{ inputs.password }} --without-config --library-path  ${{ inputs.path }}
+        shell: bash
