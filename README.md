@@ -3,7 +3,7 @@
 This [GitHub Action](https://github.com/features/actions) can be used to upload a TwinCAT .library file as a package to [Twinpack](https://github.com/Zeugwerk/Twinpack), the first TwinCAT Package manager.
 Usually you'd want to create workflow such that any release of your repository is automatically uploaded to the package manager and/or trigger the publish workflow manually.
 
-Using Twinpack is **completely free** and the package manager is **open source**, but you have to [register an account](mailto:info@zeugwerk.at) to receive a `username` and `password`. This is needed so nobody can publish new versions of your packages under your name. Note that `username` and `password` can be used with all other actions that are provided by Zeugwerk, namely
+Using Twinpack is **completely free** and the package manager is **open source**, but you have to [register an account](mailto:info@zeugwerk.at). This is needed so nobody can publish new versions of your packages under your name. Note that your `username` and `password` can be used with all other actions that are provided by Zeugwerk, namely
 
 - [zkdoc-action](https://github.com/Zeugwerk/zkdoc-action) automatic documentation generation, can be used to generate up-to-date documentation, which is directly hosted on GitHub or on a private server
 - [zkbuild-action](https://github.com/Zeugwerk/zkbuild-action) compiling and unittesting a PLC with a GitHub action. For Libraries the binary is uploaded to GitHub
