@@ -16,11 +16,26 @@ inputs:
     description: 'Path where libraries are located'
     required: false
     default: '.'    
+  configuration:
+    description: ''
+    required: false
+    default: 'Release'    
+  target:
+    description: ''
+    required: false
+    default: 'TC3.1'    
+  branch:
+    description: ''
+    required: false
+    default: 'main'    
 runs:
   using: "composite"
   steps:
     - run: |
         curl.exe -s -o twinpack-latest.tar.gz https://zeugwerk.dev/Tools/twinpack-latest.tar.gz
         tar -xf twinpack-latest.tar.gz
-        ./twinpack.exe push --username ${{ inputs.username }} --password ${{ inputs.password }} --without-config --library-path  ${{ inputs.path }}
+        ./twinpack.exe push --username ${{ inputs.username }} --password ${{ inputs.password }} --without-config --library-path  ${{ inputs.path }} \
+                            --configuration ${{ inputs.configuration}} \
+                            --target ${{ inputs.target }} \
+                            --branch ${{ inputs.branch }}
       shell: bash
