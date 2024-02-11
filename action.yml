@@ -37,5 +37,6 @@ runs:
         ./twinpack.exe push --username "${{ inputs.username }}" --password "${{ inputs.password }}" --without-config --library-path  ${{ inputs.path }} \
                             --configuration ${{ inputs.configuration}} \
                             --target ${{ inputs.target }} \
-                            --branch ${{ inputs.branch }}
+                            --branch ${{ inputs.branch }} \
+                            --skip-duplicate
       shell: bash
